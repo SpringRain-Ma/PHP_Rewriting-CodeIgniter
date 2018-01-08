@@ -76,7 +76,7 @@ function detect_uri() {
         return '/';
     }
 
-    $uri = str_replace(array('//', '../'), '/', $uri);
+//    $uri = str_replace(array('//', '../'), '/', $uri);
 //    echo $uri.'<br>';
 
     // parse_url — 解析 URL，返回其组成部分
@@ -86,7 +86,8 @@ function detect_uri() {
     // 开头结尾不能有/, 将路径中的 '//' 或 '../' 等进行清理.
     // TODO: 什么情况下$uri中会有 // 或 ../ 的情况啊???
 //    $uri = str_replace(array('//', '../'), '/', $uri);
-    return  trim($uri, '/');
+//    return  trim($uri, '/');
+    return str_replace(array('//', '../'), '/', trim($uri, '/'));
 
     // 最终只得到   模块/控制器/方法 字符串
 

@@ -112,18 +112,20 @@ $CI = new $class();
 // $rsegments数组中三个元素: welcome, saysomething, hello
 // 这一步调用了 Welcome 类中的 saysomething方法, 并且把 hello作为参数传入saysomething方法.
 
-// PHP4之前的写法
-//call_user_func_array(array(&$CI, $method), array_slice($rsegments,2));
 
-// PHP5开始的写法
-call_user_func_array(array($CI, $method), array_slice($rsegments,2));
+call_user_func_array(array(&$CI, $method), array_slice($rsegments,2));
+//call_user_func_array(array($CI, $method), array_slice($rsegments,2));
+
+
 
 /**
+ * 详见 Issue #2
  * call_user_func_array(回调函数, 回调函数的参数)
  * http://php.net/manual/zh/function.call-user-func-array.php
- * 使用引用作为参数  array(&$CI, $method), 实际上这种做法已经被PHP5废除.
+ *
  * http://php.net/manual/zh/function.call-user-func-array.php#41207
  *
+ * http://php.net/manual/zh/language.references.pass.php
  */
 
 

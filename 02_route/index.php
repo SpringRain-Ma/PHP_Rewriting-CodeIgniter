@@ -114,7 +114,6 @@ $CI = new $class();
 
 
 call_user_func_array(array(&$CI, $method), array_slice($rsegments,2));
-//call_user_func_array(array($CI, $method), array_slice($rsegments,2));
 
 
 
